@@ -1,0 +1,8 @@
+month<-1:12
+spends<-c(1000,4000,5000,4500,3000,4000,9000,11000,15000,12000,7000,3000)
+sales<-c(9914,40487,54324,50044,34719,42551,94871,118914,158484,131348,78504,36284)
+months<-data.frame(month,spends,sales)
+print(months)
+plot(spends,sales,xlab="salessssss",ylab="service")
+g=glm(spends~sales,family=binomial,df)
+curve(predict(g,data.frame(sales=x),type="resp"),add=TRUE)
